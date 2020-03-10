@@ -181,8 +181,15 @@ public class DriverQA {
     public void  ChooseOkOnNextConfirmation(){
         Alert alert = driver.switchTo().alert();
         alert.accept();
+
     }
 
+
+    public  void GetMensagem(String url)
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 180);
+        wait.until(ExpectedConditions.urlContains(url));
+    }
     public void  ChooseCancelOnNextConfirmation(){
         Alert alert = driver.switchTo().alert();
         alert.dismiss();
@@ -192,8 +199,10 @@ public class DriverQA {
         return  driver.getPageSource().contains(mensagem);
     }
 
-    public String getId(String value) {
-
-       return  driver.findElement(By.xpath(String.format("//table/tbody/tr[%s]/td[s%]",value))).getTagName();
+    public String getId(){
+        String s = driver.getCurrentUrl().toString().split("/")[4];
+        return   s;
     }
+
+
 }

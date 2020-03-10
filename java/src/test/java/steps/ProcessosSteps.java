@@ -98,6 +98,19 @@ public class ProcessosSteps extends BaseSteps {
     @E("^o usuário digitar  processo \"([^\"]*)\"$")
     public void oUsuárioDigitarProcesso(String value) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        gridProcessos.delete( gridProcessos.IdElemento(value));
+      //  gridProcessos.delete( gridProcessos.IdElemento(value));
+    }
+
+    @Quando("^o usuário clicar no botao \"([^\"]*)\" na pagina de processos$")
+    public void oUsuárioClicarNoBotaoNaPaginaDeProcessos(String button) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+       gridProcessos.delete(button + processoMostar.Id());
+    }
+
+    @Entao("^usuário deveria visualizar a mensagem exclusao \"([^\"]*)\"$")
+    public void usuárioDeveriaVisualizarAMensagemExclusao(String mensagem) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+
+        Assert.assertEquals(mensagem, processoMostar.Mensagem(mensagem));
     }
 }

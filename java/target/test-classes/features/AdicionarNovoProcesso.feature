@@ -23,7 +23,7 @@ Funcionalidade: Adicionar um novo processo
     Entao  o usuŕio deveria ver o texto "Joao1 x Jacionete"
 
 
-  Esquema do Cenário: Simples GET campos preenchidos corretamente
+    Esquema do Cenário: Simples GET campos preenchidos corretamente
     E o usuário clicar no botão "<campo>" na pagina de processo
     E o usuŕio deveria ver o texto "<mensagem>"
     Quando o usuaŕio clicar em voltar
@@ -32,6 +32,7 @@ Funcionalidade: Adicionar um novo processo
       | campo        | mensagem          |
       | btn-show_221 | Joao1 x Jacionete |
       | btn-show_8   | Testes x Produção |
+
 
 
 
@@ -49,10 +50,22 @@ Funcionalidade: Adicionar um novo processo
      Entao  usuário deveria visualizar a mensagem de "Processo atualizado com sucesso."
 
 
-     Cenário: Simples DELETE  um processo
-       E o usuário digitar  processo "45"
-       E o usuário clicar em delete processo
-
+    Cenário: Simples DELETE  um processoo
+      E o usuário clicar no botão novo processo
+      E o usuário digitar no campo "processo_vara" o valor "48"
+      E o usuário digitar no campo "processo_numero_processo" o valor "9867"
+      E o usuário digitar no campo "processo_natureza" o valor "Guarda"
+      E o usuário digitar no campo "processo_partes" o valor "Imapacta x Alunos"
+      E o usuário digitar no campo "processo_data_entrada" o valor "04/02/2020"
+      E o usuário digitar no campo "processo_status" o valor "Agendado"
+      E o usuário selecionar no campo o valor "Sim"
+      E o usuário clicar  arbitramento  com o valor Sim
+      Quando o usuário clicar no botao "btn-save" na pagina de inclusao processo
+      Entao  usuário deveria visualizar a mensagem de "Processo foi criado com sucesso."
+      Quando o usuaŕio clicar em voltar
+      Entao  o usuŕio deveria ver o texto "Imapacta x Alunos"
+      Quando o usuário clicar no botao "btn-delete_" na pagina de processos
+      Entao  usuário deveria visualizar a mensagem exclusao "http://agapito-server.herokuapp.com/processos?notice=Processo+foi+apagado+com+sucesso."
 
 
 
