@@ -113,4 +113,15 @@ public class ProcessosSteps extends BaseSteps {
 
         Assert.assertEquals(mensagem, processoMostar.Mensagem(mensagem));
     }
+    @Entao("^o usuario deveria ver a mensagem de erro \"([^\"]*)\"$")
+    public void usuárioDeveriaVeramensagemErro(String mensagem) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        Assert.assertEquals(mensagem, processoMostar.MensagemErro());
+    }
+
+    @Entao("^o usuario deveria ver o  texto \"([^\"]*)\"$")
+    public void oUsuarioDeveriaVerOTexto(String mensagem) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        Assert.assertEquals(mensagem, processoMostar.MostraCampos());
+    }
 }

@@ -1,6 +1,5 @@
 package pages;
 
-import jdk.nashorn.internal.runtime.Debug;
 import support.DriverQA;
 
 public class ProcessoMostrar {
@@ -35,5 +34,15 @@ public class ProcessoMostrar {
         String s= driver.getCurrentURL();
         return  s;
 
+    }
+
+    public String MensagemErro()
+    {
+        return driver.getText("p[role=alert]","css");
+    }
+
+    public String MostraCampos()
+    {
+        return  driver.getMostrarCampo("test");
     }
 }

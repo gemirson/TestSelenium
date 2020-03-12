@@ -22,17 +22,28 @@ Funcionalidade: Adicionar um novo processo
     Quando o usuaŕio clicar em voltar
     Entao  o usuŕio deveria ver o texto "Joao1 x Jacionete"
 
-
-    Esquema do Cenário: Simples GET campos preenchidos corretamente
-    E o usuário clicar no botão "<campo>" na pagina de processo
-    E o usuŕio deveria ver o texto "<mensagem>"
-    Quando o usuaŕio clicar em voltar
-    Entao o usuŕio deveria ver o texto "<mensagem>"
+    Esquema do Cenário:  Adiciona um novo processo com campos vazios
+    E o usuário clicar no botão novo processo
+    E o usuário digitar no campo "processo_vara" o valor "<vara>"
+    E o usuário digitar no campo "processo_numero_processo" o valor "<numero_processo>"
+    E o usuário digitar no campo "processo_natureza" o valor "Guarda"
+    E o usuário digitar no campo "processo_partes" o valor "Joao1 x Jacionete"
+    E o usuário digitar no campo "processo_data_entrada" o valor "04/02/2020"
+    E o usuário digitar no campo "processo_status" o valor "Agendado"
+    E o usuário selecionar no campo o valor "Sim"
+    E o usuário clicar  arbitramento  com o valor Sim
+    Quando o usuário clicar no botao "btn-save" na pagina de inclusao processo
+    Entao  o usuario deveria ver a mensagem de erro "<mensagem>"
     Exemplos:
-      | campo        | mensagem          |
-      | btn-show_221 | Joao1 x Jacionete |
-      | btn-show_8   | Testes x Produção |
+    |      vara             |  numero_processo| mensagem                           |
+    |                       |        25       | Vara não pode ser deixado em branco |
+    |       32              |                 | Numero processo não pode ser deixado em branco |
 
+
+    # Com o que foi fornecido fica impossivel realizar uma operaçãode get com strong sem id ou class
+   Cenário:  GET campos
+     E o usuário clicar no botão "btn-show_221" na pagina de processo
+     #Entao  o usuario deveria ver o  texto "Vara"
 
 
 

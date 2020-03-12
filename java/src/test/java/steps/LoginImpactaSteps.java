@@ -1,12 +1,9 @@
 package steps;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.pt.*;
 import pages.PaginaErro;
 import pages.PaginaSucesso;
-import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.E;
-import cucumber.api.java.pt.Então;
-import cucumber.api.java.pt.Quando;
 import org.junit.Assert;
 import pages.Acesso;
 import support.BaseSteps;
@@ -48,4 +45,6 @@ public class LoginImpactaSteps  extends BaseSteps {
 
         Assert.assertEquals(mensagem,paginaErro.BuscarMensagem());
     }
+
+
 }

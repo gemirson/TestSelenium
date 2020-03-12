@@ -204,5 +204,10 @@ public class DriverQA {
         return   s;
     }
 
+    public  String getMostrarCampo(String mensagem)
+    {
+       JavascriptExecutor j = (JavascriptExecutor) driver;
+       return  (String) j.executeScript("return arguments[0].value;",driver.findElement(By.xpath("//strong[contains(text(),'Vara:')]")));
+    }
 
 }
